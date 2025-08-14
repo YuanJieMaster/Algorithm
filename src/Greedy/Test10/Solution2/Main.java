@@ -1,4 +1,4 @@
-package Greedy.Test10.Solution1;
+package Greedy.Test10.Solution2;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,27 +10,29 @@ public class Main {
 
 class Solution {
     public boolean lemonadeChange(int[] bills) {
-        int[] change = new int[3];
+        int change_five = 0;
+        int change_ten = 0;
+        int change_twenty = 0;
         for (int i = 0; i < bills.length; i++) {
             if(bills[i] == 5) {
-                change[0]++;
+                change_five++;
             }
             if(bills[i] == 10) {
-                change[0]--;
-                if(change[0] < 0) return false;
-                change[1]++;
+                change_five--;
+                if(change_five < 0) return false;
+                change_ten++;
             }
             if(bills[i] == 20) {
-                change[2]++;
-                if(change[1] > 0) {
-                    change[1]--;
-                    change[0]--;
-                    if(change[0] < 0) {
+                change_twenty++;
+                if(change_ten > 0) {
+                    change_ten--;
+                    change_five--;
+                    if(change_five < 0) {
                         return false;
                     }
                 } else {
-                    change[0] -= 3;
-                    if(change[0] < 0) {
+                    change_five -= 3;
+                    if(change_five < 0) {
                         return false;
                     }
                 }
