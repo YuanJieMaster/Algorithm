@@ -43,7 +43,8 @@ func main() {
 	//nums := []int{3, 2, 2, 3}   // 输入数组
 	nums := []int{0, 1, 2, 2, 3, 0, 4, 2} // 输入数组
 	val := 2                              // 要移除的值
-	expectedNums := []int{2, 2}           // 长度正确的预期答案。
+	//expectedNums := []int{2, 2}           // 长度正确的预期答案。
+	expectedNums := []int{0, 1, 2, 2, 3} // 长度正确的预期答案。
 	// 它以不等于 val 的值排序。
 	k := removeElement(nums, val) // 调用你的实现
 	fmt.Println(k)
